@@ -33,15 +33,12 @@ public class Fragment_home extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
         //ViewPager
-        View viewPagerView = v.findViewById(R.id.view_pager);// resuelto con pregunta: https://es.stackoverflow.com/q/118826/34903
-        if (viewPagerView != null ) {
-            viewPager = (ViewPager)viewPagerView;
-            adapter = new CustomSwipeAadapter(getContext());
-            viewPager.setAdapter(adapter);
+        viewPager = (ViewPager)v.findViewById(R.id.view_pager);
+        adapter = new CustomSwipeAadapter(getContext());
+        viewPager.setAdapter(adapter);
 
-            Timer timer = new Timer();
-            timer.schedule(new MyTimerTask(), 3000, 4000);
-        }
+        Timer timer = new Timer();
+        timer.schedule(new MyTimerTask(), 3000, 4000);
 
         return v;
     }

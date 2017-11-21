@@ -34,20 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
                FragmentManager fragmentManager = getSupportFragmentManager();
                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-               fragmentTransaction.addToBackStack(null);
+               //fragmentTransaction.addToBackStack(null);
 
                 if (item.getItemId() == R.id.home) {
-                    fragmentTransaction.replace(R.id.content_main, home).commit();
+                    fragmentTransaction.replace(R.id.content_main, home).addToBackStack(null).commit();
                 } else if (item.getItemId() == R.id.dashboard) {
-                    fragmentTransaction.replace(R.id.content_main, dash).commit();
+                    fragmentTransaction.replace(R.id.content_main, dash).addToBackStack(null).commit();
                 } else if (item.getItemId() == R.id.notifications) {
-                    fragmentTransaction.replace(R.id.content_main, notif).commit();
+                    fragmentTransaction.replace(R.id.content_main, notif).addToBackStack(null).commit();
                 }
                 return true;
             }
-        });//*
-
-
+        });
     }
-
 }
